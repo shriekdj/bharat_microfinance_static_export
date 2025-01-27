@@ -1,0 +1,604 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Section 2.3.1</title>
+    <style>
+      body {
+        font-family:'Times New Roman';
+        margin: 0;
+        padding-left: 140px;
+        padding-right: 140px;
+        padding-top: 20px;
+        padding-bottom: 60px;
+        /* padding: 140px; */
+        text-align: center;
+      }
+
+      .box-container {
+        border: 2px solid #000;
+        padding: 20px;
+        border-radius: 8px;
+        background-color: #f9f9f9;
+        font-family:'Times New Roman';
+        margin: 20px;
+        box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.8);
+        text-align: justify;
+      }
+
+      /* .sidebar {
+            width: 250px;
+            position: fixed;
+            top: 0;
+            left: 0;
+            height: 100%;
+            background-color: #f4f4f4;
+            padding: 20px;
+            overflow-y: auto;
+        }
+
+        .sidebar ul {
+            list-style-type: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .sidebar li {
+            margin: 10px 0;
+        }
+
+        .sidebar a {
+            text-decoration: none;
+            color: #333;
+            font-size: 16px;
+        }
+
+        .sidebar a:hover {
+            color: #007bff;
+        } */
+      /* 
+        .main-content {
+            margin-left: 270px;
+            padding: 20px;
+        } */
+
+      h1 {
+        font-family:'Times New Roman';
+        text-align: center;
+        font-weight: normal;
+        margin: 0;
+        /* padding: 60px; */
+
+        color: #0047b3;
+      }
+
+      h2 {
+        margin: 0;
+        font-size: 30;
+        text-align: left;
+        padding: 0px;
+        color: #0047b3;
+        font-family:'Times New Roman';
+
+        }
+
+        h3 {
+            margin: 0;
+            padding: 10px 0;
+            text-align: left;
+            color: #0047b3;
+            font-family:'Times New Roman';
+      }
+
+      a {
+        font-weight: bold;
+      }
+
+      p {
+      font-family:'Times New Roman';
+      text-align: left;
+      text-align: justify;
+      font-size: 18px;
+    }
+
+      ul,
+      li {
+        margin: 0;
+        padding: 5px 0;
+        text-align: left;
+        text-align: justify;
+      }
+
+      table {
+        border-collapse: collapse;
+        width: 100%;
+        margin: 20px 0;
+        text-align: left;
+      }
+
+      table,
+      th,
+      td {
+        border: 1px solid black;
+        padding: 8px;
+        text-align: right; 
+        padding-right: 3%;
+        font-size: 18px;
+      }
+
+      .b {
+        list-style-type: disc;
+        list-style-position: outside;
+        padding-left: 1.5em;
+      }
+
+      li.b {
+        margin-bottom: 1em;
+        text-indent: 0.1em;
+      }
+
+      ul.b {
+        list-style-position: inside;
+        margin-bottom: 1em;
+      }
+
+      .zoom-image {
+        transition: transform 0.3s ease;
+        /* Controls the speed of the zoom effect */
+        cursor: zoom-in;
+        /* Changes the cursor icon when hovering */
+      }
+
+      .zoom-image:hover {
+        transform: scale(1.1);
+        /* Increases the image size by 10% when hovered */
+        cursor: zoom-out;
+        /* Optionally changes the cursor again on hover */
+      }
+
+      #topButton {
+        position: fixed;
+        /* Keep the button fixed at the bottom-right corner */
+        bottom: 20px;
+        right: 20px;
+        background-color: hsl(0, 0%, 100%);
+        /* Green background */
+        color: black;
+        /* White text */
+        border: none;
+        /* No border */
+        border-radius: 50%;
+        /* Make it circular */
+        width: 50px;
+        height: 50px;
+        font-size: 16px;
+        font-weight: bold;
+        cursor: pointer;
+        /* Pointer cursor on hover */
+      }
+
+      #topButton img {
+        width: 50px;
+        height: 50px;
+        /* Center the image within the button */
+      }
+
+      #topButton:hover {
+        transform: scale(1.1);
+        /* Slight zoom effect */
+      }
+
+      #backButton {
+        position: fixed;
+        /* Fixed at the top-left corner */
+        top: 20px;
+        left: 20px;
+        width: 50px;
+        height: 50px;
+        background-color: hsl(0, 0%, 100%);
+        color: black;
+        border: none;
+        border-radius: 50%;
+        cursor: pointer;
+        z-index: 1000;
+        /* Ensure it appears above other elements */
+      }
+
+      #backButton img {
+        width: 50px;
+        height: 50px;
+        /* Ensure the image fits perfectly */
+      }
+      .name-column {
+      text-align: left;
+      padding-right: 0%;
+      }
+    </style>
+  </head>
+
+  <body>
+    <script>
+      // Get the button
+      const topButton = document.getElementById("topButton");
+
+      // Show the button when scrolling down
+      window.onscroll = function () {
+        if (
+          document.body.scrollTop > 200 ||
+          document.documentElement.scrollTop > 200
+        ) {
+          topButton.style.display = "block";
+          topButton.style.opacity = "1";
+        } else {
+          topButton.style.opacity = "0";
+          setTimeout(() => (topButton.style.display = "none"), 300); // Hide with delay for smooth transition
+        }
+      };
+
+      // Function to scroll to the top
+      function scrollToTop() {
+        window.scrollTo({
+          top: 10,
+          behavior: "smooth", // Smooth scrolling
+        });
+      }
+    </script>
+
+    <script>
+      // JavaScript function to go back to the previous page
+      function goBack() {
+        window.history.back(); // This will navigate to the previous page in the browser's history
+      }
+    </script>
+
+    <div class="main-content">
+      <div>
+        <button id="topButton" onclick="scrollToTop()">
+          <img class="topButton" src="./BMR_2024_Figures/arrow.png" alt="top" />
+        </button>
+      </div>
+
+      <button id="backButton" style="display: none;">
+        <img class="backButton" src="./BMR_2024_Figures/left.png" alt="back" />
+      </button>
+
+      <h3 id="state/ut-wise_loan_outstanding_(₹_in_cr.)">
+        2.3.1&nbsp;&nbsp;&nbsp;State/UT-wise Loan Outstanding (₹ in Cr.)
+      </h3>
+      <p>
+        The Loan outstanding across various States and Union territories are
+        given in Table 2.3. From the table below, it may be seen that the loan
+        outstanding for states such as Manipur (-18.07%) and Punjab (-3.47%)
+        have decreased compared to the previous financial year. The reasons for
+        the de-growth in Manipur is due to the internal issues within the state
+        with regard to law and order. Similarly, in Punjab the loan waiver
+        movement has affected the growth of the portfolio.
+      </p>
+
+      <h3 style="padding-left: 5%; padding-right: 5%; text-align: center">
+        Table 2.3 Loan Outstanding (₹ in Cr.) of all micro-lenders across
+        States/UTs - March 2024 & March 2023 (in descending order of Loan
+        Outstanding)
+      </h3>
+      <table>
+        <tr style="font-weight: bold; background-color: #d8d9da">
+          <td style="text-align: center;">S. No.</td>
+          <td style="text-align: center; padding-right: 0%;">State/UT</td>
+          <td style="text-align: center; padding-right: 0%;">March 2024</td>
+          <td style="text-align: center; padding-right: 0%;">March 2023</td>
+          <td style="text-align: center; padding-right: 0%;">Y-o-Y Growth (in %)</td>
+        </tr>
+        <tr>
+          <td style="padding-left: 15px; text-align: left;">1</td>
+          <td style="text-align: left;">Bihar</td>
+          <td>65,487</td>
+          <td>49,181</td>
+          <td>33%</td>
+        </tr>
+        <tr>
+          <td style="padding-left: 15px; text-align: left;">2</td>
+          <td style="text-align: left;">Tamil Nadu</td>
+          <td>58,239</td>
+          <td>46,403</td>
+          <td>26%</td>
+        </tr>
+        <tr>
+          <td style="padding-left: 15px; text-align: left;">3</td>
+          <td style="text-align: left;">Uttar Pradesh</td>
+          <td>46,304</td>
+          <td>33,844</td>
+          <td>37%</td>
+        </tr>
+        <tr>
+          <td style="padding-left: 15px; text-align: left;">4</td>
+          <td style="text-align: left;">Karnataka</td>
+          <td>42,560</td>
+          <td>31,588</td>
+          <td>35%</td>
+        </tr>
+        <tr>
+          <td style="padding-left: 15px; text-align: left;">5</td>
+          <td style="text-align: left;">West Bengal</td>
+          <td>40,328</td>
+          <td>30,962</td>
+          <td>30%</td>
+        </tr>
+        <tr>
+          <td style="padding-left: 15px; text-align: left;">6</td>
+          <td style="text-align: left;">Maharashtra</td>
+          <td>33,304</td>
+          <td>27,453</td>
+          <td>21%</td>
+        </tr>
+        <tr>
+          <td style="padding-left: 15px; text-align: left;">7</td>
+          <td style="text-align: left;">Odisha</td>
+          <td>25,615</td>
+          <td>20,444</td>
+          <td>25%</td>
+        </tr>
+        <tr>
+          <td style="padding-left: 15px; text-align: left;">8</td>
+          <td style="text-align: left;">Madhya Pradesh</td>
+          <td>24,870</td>
+          <td>20,882</td>
+          <td>19%</td>
+        </tr>
+        <tr>
+          <td style="padding-left: 15px; text-align: left;">9</td>
+          <td style="text-align: left;">Rajasthan</td>
+          <td>18,144</td>
+          <td>15,608</td>
+          <td>16%</td>
+        </tr>
+        <tr>
+          <td style="padding-left: 15px; text-align: left;">10</td>
+          <td style="text-align: left;">Kerala</td>
+          <td>14,159</td>
+          <td>12,752</td>
+          <td>11%</td>
+        </tr>
+        <tr>
+          <td style="padding-left: 15px; text-align: left;">11</td>
+          <td style="text-align: left;">Jharkhand</td>
+          <td>13,118</td>
+          <td>10,680</td>
+          <td>23%</td>
+        </tr>
+        <tr>
+          <td style="padding-left: 15px; text-align: left;">12</td>
+          <td style="text-align: left;">Gujarat</td>
+          <td>13,107</td>
+          <td>10,138</td>
+          <td>29%</td>
+        </tr>
+        <tr>
+          <td style="padding-left: 15px; text-align: left;">13</td>
+          <td style="text-align: left;">Andhra Pradesh</td>
+          <td>8,346</td>
+          <td>5,903</td>
+          <td>41%</td>
+        </tr>
+        <tr>
+          <td style="padding-left: 15px; text-align: left;">14</td>
+          <td style="text-align: left;">Assam</td>
+          <td>7,410</td>
+          <td>5,974</td>
+          <td>24%</td>
+        </tr>
+        <tr>
+          <td style="padding-left: 15px; text-align: left;">15</td>
+          <td style="text-align: left;">Chhattisgarh</td>
+          <td>7,390</td>
+          <td>6,205</td>
+          <td>19%</td>
+        </tr>
+        <tr>
+          <td style="padding-left: 15px; text-align: left;">16</td>
+          <td style="text-align: left;">Haryana</td>
+          <td>6,236</td>
+          <td>5,801</td>
+          <td>8%</td>
+        </tr>
+        <tr>
+          <td style="padding-left: 15px; text-align: left;">17</td>
+          <td style="text-align: left;">Punjab</td>
+          <td>5,684</td>
+          <td>5,889</td>
+          <td>-3%</td>
+        </tr>
+        <tr>
+          <td style="padding-left: 15px; text-align: left;">18</td>
+          <td style="text-align: left;">Telangana</td>
+          <td>5,015</td>
+          <td>3,431</td>
+          <td>46%</td>
+        </tr>
+        <tr>
+          <td style="padding-left: 15px; text-align: left;">19</td>
+          <td style="text-align: left;">Tripura</td>
+          <td>2,314</td>
+          <td>1,901</td>
+          <td>22%</td>
+        </tr>
+        <tr>
+          <td style="padding-left: 15px; text-align: left;">20</td>
+          <td style="text-align: left;">Uttarakhand</td>
+          <td>2,077</td>
+          <td>1,695</td>
+          <td>23%</td>
+        </tr>
+        <tr>
+          <td style="padding-left: 15px; text-align: left;">21</td>
+          <td style="text-align: left;">Puducherry</td>
+          <td>842</td>
+          <td>678</td>
+          <td>24%</td>
+        </tr>
+        <tr>
+          <td style="padding-left: 15px; text-align: left;">22</td>
+          <td style="text-align: left;">Delhi</td>
+          <td>795</td>
+          <td>650</td>
+          <td>22%</td>
+        </tr>
+        <tr>
+          <td style="padding-left: 15px; text-align: left;">23</td>
+          <td style="text-align: left;">Goa</td>
+          <td>195</td>
+          <td>135</td>
+          <td>45%</td>
+        </tr>
+        <tr>
+          <td style="padding-left: 15px; text-align: left;">24</td>
+          <td style="text-align: left;">Himachal Pradesh</td>
+          <td>182</td>
+          <td>173</td>
+          <td>5%</td>
+        </tr>
+        <tr>
+          <td style="padding-left: 15px; text-align: left;">25</td>
+          <td style="text-align: left;">Others</td>
+          <td>172</td>
+          <td>92</td>
+          <td>88%</td>
+        </tr>
+        <tr>
+          <td style="padding-left: 15px; text-align: left;">26</td>
+          <td style="text-align: left;">Sikkim</td>
+          <td>133</td>
+          <td>98</td>
+          <td>36%</td>
+        </tr>
+        <tr>
+          <td style="padding-left: 15px; text-align: left;">27</td>
+          <td style="text-align: left;">Meghalaya</td>
+          <td>129</td>
+          <td>100</td>
+          <td>29%</td>
+        </tr>
+        <tr>
+          <td style="padding-left: 15px; text-align: left;">28</td>
+          <td style="text-align: left;">Mizoram</td>
+          <td>121</td>
+          <td>95</td>
+          <td>28%</td>
+        </tr>
+        <tr>
+          <td style="padding-left: 15px; text-align: left;">29</td>
+          <td style="text-align: left;">Manipur</td>
+          <td>104</td>
+          <td>127</td>
+          <td>-18%</td>
+        </tr>
+        <tr>
+          <td style="padding-left: 15px; text-align: left;">30</td>
+          <td style="text-align: left;">Jammu & Kashmir</td>
+          <td>83</td>
+          <td>75</td>
+          <td>11%</td>
+        </tr>
+        <tr>
+          <td style="padding-left: 15px; text-align: left;">31</td>
+          <td style="text-align: left;">Arunachal Pradesh</td>
+          <td>81</td>
+          <td>43</td>
+          <td>87%</td>
+        </tr>
+        <tr>
+          <td style="padding-left: 15px; text-align: left;">32</td>
+          <td style="text-align: left;">Nagaland</td>
+          <td>55</td>
+          <td>47</td>
+          <td>17%</td>
+        </tr>
+        <tr>
+          <td style="padding-left: 15px; text-align: left;">33</td>
+          <td style="text-align: left;">Chandigarh</td>
+          <td>54</td>
+          <td>52</td>
+          <td>4%</td>
+        </tr>
+        <tr>
+          <td style="padding-left: 15px; text-align: left;">34</td>
+          <td style="text-align: left;">Andaman & Nicobar Islands</td>
+          <td>20</td>
+          <td>14</td>
+          <td>43%</td>
+        </tr>
+        <tr>
+          <td style="padding-left: 15px; text-align: left;">35</td>
+          <td style="text-align: left;">Daman & Diu</td>
+          <td>16</td>
+          <td>13</td>
+          <td>26%</td>
+        </tr>
+        <tr>
+          <td style="padding-left: 15px; text-align: left;">36</td>
+          <td style="text-align: left;">Dadra & Nagar Haveli</td>
+          <td>9</td>
+          <td>6</td>
+          <td>55%</td>
+        </tr>
+        <tr>
+          <td style="padding-left: 15px; text-align: left;">37</td>
+          <td style="text-align: left;">Ladakh</td>
+          <td>0.03</td>
+          <td>0.02</td>
+          <td>31%</td>
+        </tr>
+        <tr style="font-weight: bold; background-color: #d8d9da">
+          <td></td>
+          <td style="text-align: left;">Industry</td>
+          <td>4,42,700</td>
+          <td>3,49,130</td>
+          <td>27%</td>
+        </tr>
+      </table>
+      <p>
+        The major states in terms of loan outstanding such as Uttar Pradesh has
+        recorded higher Y-o-Y growth (37%) followed by Karnataka (35%), Bihar
+        (33%), West Bengal (30%), Gujarat (29%), Tamil Nadu (26%), Odisha (25%)
+        Maharashtra (21%), Madhya Pradesh (19%), and Rajasthan (16%). The Y-o-Y
+        growth of the industry as a whole was at 27%.
+      </p>
+      <p>
+        The two states which hitherto were out of the microfinance fold viz.
+        Telangana and Andhra Pradesh recorded 46% and 41% Y-o-Y growth
+        respectively. The reason for this higher growth was due to a lower base
+        they had in the previous year. The Hon’ble Supreme Court order upholding
+        the Telangana High Court decision against the State Government Ordinance
+        issued in 2010 has paved way for MLIs to operate in these states more
+        freely.
+      </p>
+      <br />
+
+      <div style="text-align: center">
+        <img
+          src="./BMR_2024_Figures/figure 2.5png.png"
+          alt="figure"
+          style="width: 70%; height: 70%"
+          class="zoom-image"
+        />
+      </div>
+      <br />
+
+      <p>
+        NBFC-MFIs with 39% market share was leading, followed by Banks at 33%.
+        The SFBs, NBFCs, and Other institutions, accounted for 17%, 10%, 1% of
+        the market share, respectively. The smaller MLIs had a larger Business
+        Correspondent (BC) portfolio and the same is reflected in the Banks or
+        NBFC segment which engaged them.
+      </p>
+      <p>
+        It can be seen that Banks which had highest share at 42% at the end of
+        March 2021 have been relegated to the second position with 33%. Whereas
+        the NBFC-MFIs, which was at 31% three years back has jumped to 39%, now,
+        and has taken the pole position. This change is largely on account of
+        the new regulatory norms making the same applicable to all
+        micro-lenders, thereby reducing the advantage Banks enjoyed earlier.
+      </p>
+    </div>
+  </body>
+</html>
