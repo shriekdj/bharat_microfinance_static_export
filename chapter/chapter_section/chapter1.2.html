@@ -1,0 +1,420 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <title>Chapter 1.2</title>
+    <div class="sidebar">
+      <!-- <ul>
+            <li><a href="#the_changing_ecosystem_of_inclusive_finance">The changing ecosystem of inclusive finance</a>
+            </li>
+            <li><a href="#institutional_architecture_for_inclusive_finance">Institutional architecture for inclusive
+                    finance</a></li>
+        </ul> -->
+    </div>
+    <style>
+      body {
+        font-family:'Times New Roman';
+        margin: 0;
+        padding-left: 140px;
+        padding-right: 140px;
+        padding-top: 20px;
+        padding-bottom: 60px;
+        /* padding: 140px; */
+        text-align: center;
+      }
+
+      .box-container {
+        border: 2px solid #000;
+        padding: 20px;
+        border-radius: 8px;
+        background-color: #f9f9f9;
+        font-family:'Times New Roman';
+        margin: 20px;
+        box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.8);
+        text-align: justify;
+      }
+
+      /* .sidebar {
+            width: 250px;
+            position: fixed;
+            top: 0;
+            left: 0;
+            height: 100%;
+            background-color: #f4f4f4;
+            padding: 20px;
+            overflow-y: auto;
+        }
+
+        .sidebar ul {
+            list-style-type: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .sidebar li {
+            margin: 10px 0;
+        }
+
+        .sidebar a {
+            text-decoration: none;
+            color: #333;
+            font-size: 16px;
+        }
+
+        .sidebar a:hover {
+            color: #007bff;
+        } */
+      /* 
+        .main-content {
+            margin-left: 270px;
+            padding: 20px;
+        } */
+
+      h1 {
+        font-family:'Times New Roman';
+        text-align: center;
+        font-weight: normal;
+        margin: 0;
+        /* padding: 60px; */
+
+        color: #0047b3;
+      }
+
+      h2 {
+        margin: 0;
+        font-size: 30;
+        text-align: left;
+        padding: 0px;
+        color: #0047b3;
+        font-family:'Times New Roman';
+
+        }
+
+        h3 {
+            margin: 0;
+            padding: 10px 0;
+            text-align: left;
+            color: #0047b3;
+            font-family:'Times New Roman';
+      }
+
+      a {
+        font-weight: bold;
+      }
+
+      p {
+      font-family:'Times New Roman';
+      text-align: left;
+      text-align: justify;
+      font-size: 18px;
+    }
+
+      ul,
+      li {
+        margin: 0;
+        padding: 5px 0;
+        text-align: left;
+        text-align: justify;
+      }
+
+      table {
+        border-collapse: collapse;
+        width: 100%;
+        margin: 20px 0;
+        text-align: left;
+      }
+
+      table,
+      th,
+      td {
+        border: 1px solid black;
+        padding: 8px;
+        text-align: right; 
+        padding-right: 3%;
+        font-size: 18px;
+      }
+
+      .b {
+        list-style-type: disc;
+        list-style-position: outside;
+        padding-left: 1.5em;
+      }
+
+      li.b {
+        margin-bottom: 1em;
+        text-indent: 0.1em;
+      }
+
+      ul.b {
+        list-style-position: inside;
+        margin-bottom: 1em;
+      }
+
+      .zoom-image {
+        transition: transform 0.3s ease;
+        /* Controls the speed of the zoom effect */
+        cursor: zoom-in;
+        /* Changes the cursor icon when hovering */
+      }
+
+      .zoom-image:hover {
+        transform: scale(1.1);
+        /* Increases the image size by 10% when hovered */
+        cursor: zoom-out;
+        /* Optionally changes the cursor again on hover */
+      }
+
+      #topButton {
+        position: fixed;
+        /* Keep the button fixed at the bottom-right corner */
+        bottom: 20px;
+        right: 20px;
+        background-color: hsl(0, 0%, 100%);
+        /* Green background */
+        color: black;
+        /* White text */
+        border: none;
+        /* No border */
+        border-radius: 50%;
+        /* Make it circular */
+        width: 50px;
+        height: 50px;
+        font-size: 16px;
+        font-weight: bold;
+        cursor: pointer;
+        /* Pointer cursor on hover */
+      }
+
+      #topButton img {
+        width: 50px;
+        height: 50px;
+        /* Center the image within the button */
+      }
+
+      #topButton:hover {
+        transform: scale(1.1);
+        /* Slight zoom effect */
+      }
+
+      #backButton {
+        position: fixed;
+        /* Fixed at the top-left corner */
+        top: 20px;
+        left: 20px;
+        width: 50px;
+        height: 50px;
+        background-color: hsl(0, 0%, 100%);
+        color: black;
+        border: none;
+        border-radius: 50%;
+        cursor: pointer;
+        z-index: 1000;
+        /* Ensure it appears above other elements */
+      }
+
+      #backButton img {
+        width: 50px;
+        height: 50px;
+        /* Ensure the image fits perfectly */
+      }
+      .name-column {
+      text-align: left;
+      padding-right: 0%;
+      }
+    </style>
+  </head>
+
+  <body>
+    <script>
+      // Get the button
+      const topButton = document.getElementById("topButton");
+
+      // Show the button when scrolling down
+      window.onscroll = function () {
+        if (
+          document.body.scrollTop > 200 ||
+          document.documentElement.scrollTop > 200
+        ) {
+          topButton.style.display = "block";
+          topButton.style.opacity = "1";
+        } else {
+          topButton.style.opacity = "0";
+          setTimeout(() => (topButton.style.display = "none"), 300); // Hide with delay for smooth transition
+        }
+      };
+
+      // Function to scroll to the top
+      function scrollToTop() {
+        window.scrollTo({
+          top: 10,
+          behavior: "smooth", // Smooth scrolling
+        });
+      }
+    </script>
+
+    <script>
+      // JavaScript function to go back to the previous page
+      function goBack() {
+        window.history.back(); // This will navigate to the previous page in the browser's history
+      }
+    </script>
+
+    <div class="main-content">
+      <div>
+        <button id="topButton" onclick="scrollToTop()">
+          <img class="topButton" src="./BMR_2024_Figures/arrow.png" alt="top" />
+        </button>
+      </div>
+
+      <button id="backButton" style="display: none;">
+        <img class="backButton" src="./BMR_2024_Figures/left.png" alt="back" />
+      </button>
+
+      <h1 style="font-size: 300%">Outlook for Microfinance in India</h1>
+      <br />
+      <h2
+        style="font-size: x-large"
+        id="the_changing_ecosystem_of_inclusive_finance"
+      >
+        1.2&nbsp;&nbsp;The changing ecosystem of inclusive finance
+      </h2>
+      <br />
+      <p>
+        The past year was also a year of relief for the inclusive finance sector
+        and possibly an indication of stability of operations and maturity in
+        understanding of what the intervention is all about. The intense
+        political activity due to general elections, the unfavourable climate
+        impact and some kind over leverage in certain pockets have some negative
+        on the microfinance and inclusive finance space. Having braved multiple
+        crises in Kolar, Nizamabad and Krishna districts, and more recently the
+        Assam crisis, we may assume that the sector has come of age and
+        stabilised. There were no tensions about the political activity and the
+        activity continue business-as-usual frame. There were no significant
+        structural changes, during the past year and there does not seem to be
+        any fundamental changes soon. How do we read this stability in the
+        ecosystem, institutional design, product design and delivery of
+        financial services to the poor and excluded?
+      </p>
+      <p>
+        It may be time for us to take stock of the situation to understand this
+        stability and mark the significant events that have led us to this
+        stage. We also should read the tea leaves to see the possibilities and
+        fissures of the future.
+      </p>
+      <p>
+        Let us look at the most significant events in the past and recognise how
+        the inclusive finance sector has fundamentally changed and what it means
+        as we go forward in terms of operations. The concept of a solidarity
+        groups was put to test during the demonetisation phase, when different
+        members of solidarity groups got affected differently. This was an
+        inflexion point, which compromised on the group solidarity to getting
+        individuals to pay their dues. While the trigger was demonetisation, we
+        also must recognise that the ecosystem had evolved. The group solidarity
+        was needed because of information asymmetry between the lender and the
+        borrower. But with credit bureaus emerging effectively, a significant
+        part of the formal indebtedness of the borrower was now getting
+        captured. The credit bureau score turned out to be a fairly powerful
+        weapon that worked in two ways: it helped the lender to take a call
+        based on the score, and it also helped in recovery – where the lender
+        could convince the borrower the importance of maintaining a decent
+        credit score in order to have a continued relationship. But there are
+        also concerns of some lending done in the same space microfinance is not
+        getting captured in the credit buraus. The group mechanism, one
+        fundamental purpose of the group – that of providing round-robin
+        guarantee was watered down. However, the other fundamental purpose of
+        the group – the aggregation of transactions and the regularity of the
+        meeting still continued although in a much diluted manner.
+      </p>
+      <p>
+        In making this observation it is important to clarify that we are
+        restricting the note to the JLG type of inclusive finance, while the
+        self-help groups worked on an ex-ante basis. The SHG architecture has
+        remained warped in time and embedded in the rural livelihoods
+        architecture of the State. While it is important to recognise their work
+        and how they impact the overall ecosystem, in the context of the Bharat
+        Microfinance Report and the functions undertaken by an organisation like
+        Sa-Dhan, the details of the SHG ecosystem would not be particularly
+        important. While there are significant attempts to computerise the SHG
+        records (with the initiative of NABARD) and to upload the SHG data on to
+        the credit bureaus, there are still gaps in the journey since the
+        individual records have not completely been de-duplicated. Moreover, the
+        SHG bank linkage has been now fully taken over by the DAY-NRLM and it
+        has been become as the flagship programme for livelihood and enterprises
+        for poor. This would further get a boost with the implementation of
+        Lakhpati Didi scheme of GOI, where the women borrowers would be
+        supported to graduate into larger business activities.
+      </p>
+      <p>
+        Therefore, the larger shifts that we are discussing is in the context of
+        the JLG type of inclusive finance.
+      </p>
+      <p>
+        The second major shift that happened in the design of the JLG system
+        happened because of the Covid 19 pandemic, where the activity continued,
+        even without the need for the groups to meet. While in significant parts
+        of the ecosystem, meetings continue to happen for aggregation of
+        transactions and regularity, this is no longer the non-negotiable piece
+        in the design.
+      </p>
+      <p>
+        With technological advances, it is possible to move to digital payments
+        and repayments. There are still challenges because of multiple factors:
+        (a) women may not have smartphones or handsets mapped exclusively to
+        their account; (b) women are nervous because there is no “touch and
+        feel” for the transaction. However, this is an area that is open to
+        significant intervention through literacy and education.
+      </p>
+      <p>
+        Once the digital payments and repayments become ubiquitous, then the
+        need for the group meeting would be reduced to (a) socialisation and (b)
+        regularity of contact with the customer. This change would affect the
+        way the inclusive finance sector is currently operating. However, these
+        changes will not be immediate and drastic, but there will be a movement
+        towards embracing technology. It is important for the players in the
+        sector to anticipate and make investments not only in hardware and
+        software, but also in training and awareness programmes.
+      </p>
+      <p>
+        These are fundamental changes in the operating model of inclusive
+        finance. As more people get included, it would be important for the
+        sector to deepen the engagement with the clients. The regulation has
+        provided for a possibility of increasing the exposure to these families
+        by increasing the limits in defining microfinance loans and exposures.
+        However, if the engagement with the customers must be deepened, then it
+        will have to move towards individual loans. Several organisations
+        already have individual loans, but these are offered through the
+        signalling of group mechanisms. The way the deepening of the exposure is
+        undertaken is through regular increase in exposure limits, based on
+        credit scores and past performance with the organisation. This is the
+        weakness in the inclusive finance model. The architecture of assessment
+        of individual loans through understanding the client cash flows is
+        limiting. The group model relied on the embedded knowledge of the group
+        members and their honour to ensure repayments. But as we go to a low
+        touch, technology enabled, individual model then organisations must be
+        careful and develop adequate capabilities at the credit officer level on
+        assessments.
+      </p>
+      <p>
+        As the level of data improves and recording and codification of
+        transactions increases, the reliance of embedded knowledge of the groups
+        would not be as critical and one could continue the relationship based
+        on extant knowledge and experience. However, the framework under which
+        this model operates needs a reset in the learnings and lived experience
+        of credit officers. As we go forward this would be the major challenge
+        to the inclusive finance organisations. Excessive reliance on data is
+        also amenable to lending on an involuntary framework. What we mean by
+        involuntary framework is that the loans would be pushed through offers
+        based on the models developed based on transaction data. This would be
+        imperative as more data get captured through digital transactions
+        including UPI. If this phenomenon picks up, the biggest players in the
+        market would be FinTech. How the legacy microfinance institutions cope
+        with the data driven fintech is to be seen. The legacy microfinance
+        institutions have something that the fintech do not have – presence on
+        ground and feet on street. The new microfinance model will have to blend
+        the strength of data with the field presence, to undertake responsible,
+        need based lending rather than data driven push of loan products.
+      </p>
+      <br />
+    </div>
+  </body>
+</html>

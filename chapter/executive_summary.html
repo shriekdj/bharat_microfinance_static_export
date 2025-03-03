@@ -1,0 +1,440 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset='UTF-8'>
+    <title>Executive Summary</title>
+    <!-- <div class='sidebar'>
+        <ul>
+            <li><a href="#list_of_abbreviations">List of Abbreviations</a></li>
+            <li><a href="#glossary">Glossary</a></li>
+            <li><a href="#executive_summary">Executive Summary</a></li>
+            <li><a href="#bharat_microfinance_report">Bharat Microfinance Report</a></li>
+            <li><a href="#reporting_of_the_information">Reporting of the information</a></li>
+            <li><a href="#highlights_of_the_performance">Highlights of the Performance</a></li>
+            <li><a href="#microfinance_sectoral_performance_(based_on_cic_data)">Microfinance Sectoral Performance
+                    (based on CIC data)</a></li>
+            <li><a
+                    href="#performance_of_microlending_institutions_(as_collected_directly_from_217_micro_lending_institutions_(mlis))">Performance
+                    of Microlending institutions (as collected directly from 217 Micro Lending Institutions (MLIs))</a>
+            </li>
+            <li><a href="#growth_and_outreach">Growth and Outreach</a></li>
+            <li><a href="#operational_and_financial_performance">Operational and Financial Performance</a></li>
+            <li><a href="#self-help_groups_and_the_bc_model">Self-Help Groups and the BC model</a></li>
+            <li><a href="#business_correspondent_model">Business Correspondent Model</a></li>
+            <li><a href="#beyond_credit_activities">Beyond Credit Activities</a></li>
+        </ul>
+    </div> -->
+    <style>
+        body {
+            font-family: 'Times New Roman';
+            margin: 0;
+            padding-left: 140px;
+            padding-right: 140px;
+            padding-top: 20px;
+            padding-bottom: 60px;
+            /* padding: 140px; */
+            text-align: center;
+        }
+
+        .box-container {
+            border: 2px solid #000;
+            padding: 20px;
+            border-radius: 8px;
+            background-color: #f9f9f9;
+            font-family: 'Times New Roman';
+            margin: 20px;
+            box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.8);
+        }
+
+        /* .sidebar {
+            width: 250px;
+            position: fixed;
+            top: 0;
+            left: 0;
+            height: 100%;
+            background-color: #f4f4f4;
+            padding: 20px;
+            overflow-y: auto;
+        }
+
+        .sidebar ul {
+            list-style-type: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .sidebar li {
+            margin: 10px 0;
+        }
+
+        .sidebar a {
+            text-decoration: none;
+            color: #333;
+            font-size: 16px;
+        }
+
+        .sidebar a:hover {
+            color: #007bff;
+        } */
+        /* 
+        .main-content {
+            margin-left: 270px;
+            padding: 20px;
+        } */
+
+        h1 {
+            font-family: 'Times New Roman';
+            text-align: center;
+            font-weight: normal;
+            margin: 0;
+            /* padding: 60px; */
+
+            color: #0047b3;
+        }
+
+        h2 {
+            margin: 0;
+            font-size: 30;
+            text-align: left;
+            padding: 0px;
+            color: #0047b3;
+            font-family: 'Times New Roman';
+
+        }
+
+        h3 {
+            margin: 0;
+            padding: 10px 0;
+            text-align: left;
+            color: #0047b3;
+            font-family: 'Times New Roman';
+
+        }
+
+        a {
+            font-weight: bold;
+        }
+
+        p {
+            font-family: 'Times New Roman';
+            text-align: left;
+            text-align: justify;
+            font-size: 18px;
+            text-align: justify;
+        }
+
+        ul,
+        li {
+            margin: 0;
+            padding: 5px 0;
+            text-align: left;
+        }
+
+        table {
+            border-collapse: collapse;
+            width: 100%;
+            margin: 20px 0;
+            text-align: left;
+        }
+
+        table,
+        th,
+        td {
+            border: 1px solid black;
+            padding: 8px;
+            text-align: right;
+            padding-right: 3%;
+            font-size: 18px;
+        }
+
+        .b {
+            list-style-type: disc;
+            list-style-position: outside;
+            padding-left: 1.5em;
+        }
+
+        li.b {
+            margin-bottom: 1em;
+            text-indent: 0.1em;
+        }
+
+        ul.b {
+            list-style-position: inside;
+            margin-bottom: 1em;
+        }
+
+        .zoom-image {
+            transition: transform 0.3s ease;
+            /* Controls the speed of the zoom effect */
+            cursor: zoom-in;
+            /* Changes the cursor icon when hovering */
+        }
+
+        .zoom-image:hover {
+            transform: scale(1.1);
+            /* Increases the image size by 10% when hovered */
+            cursor: zoom-out;
+            /* Optionally changes the cursor again on hover */
+        }
+
+        #topButton {
+            position: fixed;
+            /* Keep the button fixed at the bottom-right corner */
+            bottom: 20px;
+            right: 20px;
+            background-color: hsl(0, 0%, 100%);
+            /* Green background */
+            color: black;
+            /* White text */
+            border: none;
+            /* No border */
+            border-radius: 50%;
+            /* Make it circular */
+            width: 50px;
+            height: 50px;
+            font-size: 16px;
+            font-weight: bold;
+            cursor: pointer;
+            /* Pointer cursor on hover */
+        }
+
+        #topButton img {
+            width: 50px;
+            height: 50px;
+            /* Center the image within the button */
+        }
+
+        #topButton:hover {
+            transform: scale(1.1);
+            /* Slight zoom effect */
+        }
+
+        #backButton {
+            position: fixed;
+            /* Fixed at the top-left corner */
+            top: 20px;
+            left: 20px;
+            width: 50px;
+            height: 50px;
+            background-color: hsl(0, 0%, 100%);
+            color: black;
+            border: none;
+            border-radius: 50%;
+            cursor: pointer;
+            z-index: 1000;
+            /* Ensure it appears above other elements */
+        }
+
+        #backButton img {
+            width: 50px;
+            height: 50px;
+            /* Ensure the image fits perfectly */
+        }
+
+        .name-column {
+            text-align: left;
+            padding-right: 0%;
+        }
+    </style>
+</head>
+
+<body>
+    <script>
+        // Get the button
+        const topButton = document.getElementById("topButton");
+
+        // Show the button when scrolling down
+        window.onscroll = function () {
+            if (
+                document.body.scrollTop > 200 ||
+                document.documentElement.scrollTop > 200
+            ) {
+                topButton.style.display = "block";
+                topButton.style.opacity = "1";
+            } else {
+                topButton.style.opacity = "0";
+                setTimeout(() => (topButton.style.display = "none"), 300); // Hide with delay for smooth transition
+            }
+        };
+
+        // Function to scroll to the top
+        function scrollToTop() {
+            window.scrollTo({
+                top: 10,
+                behavior: "smooth", // Smooth scrolling
+            });
+        }
+    </script>
+
+    <script>
+        // JavaScript function to go back to the previous page
+        function goBack() {
+            window.history.back(); // This will navigate to the previous page in the browser's history
+        }
+    </script>
+
+    <div class='main-content'>
+        <div>
+            <button id="topButton" onclick="scrollToTop()">
+                <img class="topButton" src="./BMR_2024_Figures/arrow.png" alt="top" />
+            </button>
+        </div>
+
+        <button id="backButton" style="display: none;">
+            <img class="backButton" src="./BMR_2024_Figures/left.png" alt="back" />
+        </button>
+        
+        <h1 style="font-size: 300%" id="executive_summary">Executive Summary</h1>
+        <h2>Introduction</h2>
+       
+        <div style="text-align: justify; font-family: 'Times New Roman'; line-height: 1.15; font-size: 18px;">
+            <span
+                style="float: left; font-size: 30pt; line-height: 1; font-weight: bold; color: #0047b3; margin-right: 10px; font-family: 'Times New Roman';">
+                T
+            </span>
+        <p>he microfinance sector in the country has shown a great revival with an excellent growth of around 27% for
+            the sector as a whole. The y-o-y growth rate of NBFCs (46%) was even higher, while the NBFC- MFIs registered
+            24% y-o-y growth. Thus, there was a positive response from the sector last year. It also goes to show that
+            the industry has come out of the covid induced troubles, it faced over two years, from 2020 to 2022. The new
+            vigor has found by the sector was largely due to a congenial environment of a growing economy and a conducive regulatory structure enabled this quick turnaround.</p>
+        </div>    
+      
+        <p>The total loan portfolio of microfinance sector was at ₹4.43 lakh crore at the end of the last financial
+            year. The active client base also recorded 17% growth and touched 8.67crore, for the JLG model. At the same
+            time SHG Bank linkage has also shown a good growth with the overall outstanding reaching ₹2.60 lakh crore
+            for 77.42 lakh SHGs credit linked. There were around 144.21 lakh SHGs with 17.75 crore households being
+            savings linked under the SHG Bank linkage programme. The repayment performance under both the modes recorded
+            great improvement. The Micro Lending Institutions (MLIs), which included MFIs, NBFCs and BC companies,
+            reported a 90 plus dpd including overdues above 179 days at 2.04%.</p>
+        <p>The global economy, however, continues to be volatile with geopolitical uncertainties due to conflicts as
+            well as disruption in shipping routes. The global inflation, while marginally came down is still above the
+            targeted rate. Global growth has shrunk due to tight monetary policies. This of course affects India and the
+            Indian economy. While the Indian economy has shown greater resilience, and have had a third consecutive year
+            of 7%+ growth in GDP. However, the erratic climate events due to the climate change phenomenon is a threat
+            to the country and its developmental goals.</p>
+        <p>Under these circumstances, the sector needs to have more caution. The credit growth should be such that it
+            does not put any undue pressure on the borrowers and industry does not get affected on account of any
+            delinquency. The present growth rate being recorded by the industry is attracting some kind of red flag. A
+            caution has been raised against the possibility of credit over growth, which can derail the recovery
+            environment, the signs of which is visible. Thankfully the industry leaders and SROs have realized this
+            problem well in advance and has taken steps to avoid such a scenario. But the sector definitely promises for
+            better days ahead for the borrowers and the institutions.</p>
+        <h2 id="bharat_microfinance_report">Bharat Microfinance Report</h2>
+        <p>Bharat Microfinance Report (BMR) is an effort to present the overall sectoral view of microfinance sector in
+            the country, by compiling the data/ information from various sources and putting together at one place. The
+            data is captured from Credit Information Company as well as directly sourced from Micro Lending Institutions
+            (MLIs). The SHG Bank linkage related data is obtained NABARD. The data from some other institutions are
+            sourced in the Report. The data is then analyzed and presented in a form which can be easily appreciated by
+            the users. The report includes geographical coverage, client outreach, income, expenditure and profitability
+            of MLIs, their financial ratios, activities beyond credit etc.</p>
+        <p>The report is intended to be a one stop point regarding all information on microfinance sector in India,
+            which will be useful to a wide range of stakeholders such as the Government, policymakers, regulators,
+            banks, investors, researchers, media, MLIs and others, helping them to understand the current status and
+            trends in the sector.</p>
+        <h2 id="reporting_of_the_information">Reporting of the information</h2>
+        <p>The detailed analysis of various parameters is based on the information directly sourced from 217 Micro
+            Lending Institutions (MLIs) which represents more than 98% MLI business in the country. The data is also
+            sourced from Credit Bureau viz. CRIF Highmark for the sector as a whole. This information includes data of
+            all micro-lenders viz. MLIs, Banks and SFBs involved in microfinance lending in India. There is also
+            detailed information on SHG Bank linkage, Credit Plus activities of the microfinance sector and the BC model
+            of financing covered in the Report.</p>
+        <h2 id="highlights_of_the_performance">Highlights of the Performance</h2>
+        <h3 id="microfinance_sectoral_performance_(based_on_cic_data)">Microfinance Sectoral Performance (based on CIC
+            data)</h3>
+        <p>The performance of entire sector is obtained from Credit Information Bureau which compiles the data on a
+            regular basis. As per the CRIF Highmark, the combined loan outstanding of the microfinance sector was</p>
+        <p>₹4,42,700 Cr., outstanding against 1,613 lakh loan accounts, as on 31 March 2024. The share of different
+            institutions in loan outstanding is as follows: NBFC-MFIs: ₹1,73,504 Cr. (39%); Banks: ₹1,46,909 Cr. (33%);
+            SFBs: ₹74,712 Cr. (17%); NBFCs: ₹45,236 Cr. (10%) and Non-profit MFIs: ₹2,338 Cr. (1%). The share of loan
+            accounts of various institutions is as follows: NBFC-MFIs: 636 lakhs (39%); Banks: 554 lakhs (34%); SFBs:
+            244 lakhs (15%); NBFCs: 170 lakhs (11%) and Others: 11 lakhs (1%).</p>
+        <h2
+            id="performance_of_microlending_institutions_(as_collected_directly_from_217_micro_lending_institutions_(mlis))">
+            Performance of Microlending institutions (as collected directly from 217 Micro Lending Institutions (MLIs))
+        </h2>
+        <h3 id="growth_and_outreach">Growth and Outreach</h3>
+        <p>As per the data obtained directly from MLIs, they are currently operating in 28 States, 5 Union Territories,
+            and in 723 districts in India. Whereas, the data from CIC viz. CRIF Highmark shows operations in all 36
+            States/UTs and in 719 districts of the country. Another CIC has reported operation in 729 districts. The
+            data on district may vary as some of the districts where the operations have started may have been exited in
+            between or some districts may have some outstanding portfolio without any operations at present. The
+            detailed analysis of the MLI operation is based on the data collected directly from the MLIs.</p>
+        <p>For the purpose of the detailed analysis, data from 217 Micro Lending Institutions (MLIs), which represent
+            98% of the microfinance sector, has been collected directly through a structured format. The data so
+            collected indicate that the total branch network of microfinance institutions was at 33,644 with 2.87 lakh
+            employees engaged with them. Together they have reached out to over 698 lakh active micro clients with a
+            total loan outstanding of ₹2,61,239 Cr., including a managed portfolio of ₹79,410 Cr. The managed portfolio
+            is contributed mostly by Business Correspondents which worked out to ₹54,416 crores. The loan outstanding per borrower stood at ₹37,445 per borrower. The utilization of loan indicates that about 94% of
+            loans were used for income generation purposes.</p>
+        <p>The CIC data (CRIF Highmark) shows a total active client base of 8.67 Cr. and a loan outstanding of ₹4,42,700
+            Cr., for the entire microfinance sector. This is contributed by Banks, SFBs, NBFCs, NBFC-MFIs and Others.
+            The client base and loan outstanding for the sector grew by 17% and 27% respectively. Again, considering the
+            CIC data, the top 5 States continued to be Bihar, Tamil Nadu, Uttar Pradesh, Karnataka and West Bengal with
+            Bihar alone accounting for nearly 15% of industry portfolio. Similarly, the top 25 districts accounted for
+            18% of industry portfolio and the top 4 districts had more than ₹4,000 Cr. portfolio, with 3 districts from
+            Bihar (East Champaran, Muzaffarpur, Samastipur) and 1 district from West Bengal (Murshidabad).</p>
+        <p>From the self-reported data of 217 Micro Lending Institutions (MLIs), which excludes Banks and SFBs, the
+            growth of loan portfolio and client base were at 45% and 31% respectively. However, the growth rate of pure
+            MFIs (excluding NBFCs and Pvt. & Pub. Ltd. Coms) was at 28% for loan portfolio and 15% for active clients.
+            Similarly, the MLIs, reported a growth of 27% in loan disbursements. The NBFCs and NBFC-MFIs together
+            contributed to 89% of total client base and 86% of outstanding portfolio.</p>
+        <p>Also, the MLIs with portfolio size of more than ₹2,000 Cr. contributed significantly to the total outreach
+            (85%) and loan outstanding (88%) in the sector. Thus, sector is dominated by the 15 to 20 major lenders,
+            mostly NBFC-MFIs. At the same time other MFIs like Societies, Trusts, MACS or Cooperatives, Section 8
+            companies continued their operations in low key by served in niche areas. They contributed approximately 10%
+            of loan portfolio outstanding. The Southern region continues to have the upper hand in the share of loans
+            outstanding, followed by the Eastern region. Whereas in the client base, Eastern region has the upper hand.
+            The proportion of rural clientele is 77% in FY 2023-24. The women borrowers constituted 99% of the total
+            clientele of MLIs, SC/ST borrowers formed 25% and minorities 7%.</p>
+        <h2 id="operational_and_financial_performance">Operational and Financial Performance</h2>
+        <p>The high touch operations in MLI sector continued and sector employed 2.87 lakh personnel by the end of last
+            FY 23-24. The share of women in the MLI staff was only 11%, which continued to be at a lower level. The
+            average number of active borrowers per credit officer (ABCO) has shown a decline and was at 380. The
+            reduction in clients should help the MLIs to extend better services and put lesser pressure on the staff.
+        </p>
+        <p>The expenditure side of the microfinance operations show that the major expenses in MLIs was due to the
+            financial cost which formed 46%. The next major item of expenditure was on account of personnel cost, at
+            27%. The other operational expenses were due to administrative expenses and other expenses at 10% and 17%,
+            respectively. The average operating cost of a microfinance institutions was at 6.51%. It varied between
+            different types of institutions and was lowest for the MLIs with more than ₹2,000 Cr. at 6.22%.</p>
+        <p>The Effective Yield of the sector during the year has improved to 20.76%. While the NBFC-MFIs had 20.75%
+            average yield, it was lower for other institutions like Society, Trust, and MACS/Cooperative at 19.38%, The
+            highest yield was recorded by NBFCs with 21.47%. The average financial margin for different types of
+            institutions ranged from 7 to 10%. The average margin of NBFC-MFIs was at 9.55% whereas others had relatively lower margin. The average OSS (Operational Self Sufficiency) of the MLIs was at 122%. About 14% of
+            MLIs have reported an OSS less than 100%.</p>
+        <p>ROA and ROE (weighted averages) for the sector stood at 4.06% and 19.28% respectively. The returns are
+            usually higher for large-sized MLIs.</p>
+        <p>The CAR (Capital Adequacy Ratio) for all types of MLIs remained above the desirable level of 15% with
+            NBFC-MFIs having an average CAR of 27%. The Leverage (D/E ratio) of the sector was at 2.7. The sector
+            received funding of ₹1,05,306 Cr. for its business activities, which includes sale and securitization of
+            portfolio of ₹17,569 Cr. The total outstanding borrowing of MLIs stood at ₹1,30,096 Cr., with NBFC-MFIs
+            accounting for nearly 96% of this pie. The large category of MLIs had 91% of the share of funds received.
+        </p>
+        <h2 id="self-help_groups_and_the_bc_model">Self-Help Groups and the BC model</h2>
+        <p>The SHG Bank linkage gained momentum with its adoption for the world’s largest poverty alleviation and
+            employment generation programme of government, DAY NRLM. The number of saving linked SHGs has also increased
+            during the year with 17.75 crore households being savings linked through 144.21 lakh SHGs, with a total bank
+            savings of ₹65,089 Cr. The number SHGs credit linked also increased during the year with a total of 77.42
+            lakh SHGs having a loan outstanding with banks, amounting to ₹2,59,664 Cr. The average loan disbursed per
+            SHG for FY 2023-24 is reported at ₹3,81,759. The aggregate NPA of SHG loans has improved in FY 2023-24 to
+            2.05%.</p>
+        <h2 id="business_correspondent_model">Business Correspondent Model</h2>
+        <p>The Financial inclusion programme started by RBI in 2005 got a boost with their policy on BC model. Although
+            initially on NGO-MFIs were allowed to take part in this programme, it was extended later to NBFCs and
+            NBFC-MFIs, being appointed as corporate BCs. The engagement of NBFC-MFIs was a win-win for both, the lender
+            and the BC agent. The smaller MLIs found it a better route to expand their business without involving
+            capital from their side. Today there are 104 MLIs operating as BCs for 99 lending institutions. Some of the
+            MLIs have also entered into a co-lending model, and it is picking up. The total portfolio built through BC
+            model by MLIs works out to ₹54,416 Cr. as on 31 March 2024.</p>
+        <h2 id="beyond_credit_activities">Beyond Credit Activities</h2>
+        <p>The microfinance institutions, especially the NBFC-MFIs and non NBFC-MFIs, engaged in various developmental
+            activities for the benefit of the community which they served. These activities included business related
+            such as offering insurance cover, pension and savings products. Some of the MLIs have started extending
+            parametric insurance cover which protected the borrowers from erratic climate events. At the same time, the
+            MLIs involved in social activities like health, education, water and sanitation, community development
+            programmes, imparting financial literacy, digital literacy and promoting climate resilient agriculture,
+            water and sanitation products etc. The RBI supported DEA workshops are of a great help in imparting
+            depositors’ awareness education. Sa-Dhan has been supporting the MLIs for the same.</p>
+        
+        

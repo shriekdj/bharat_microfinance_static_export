@@ -1,0 +1,756 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Section 2.3.3</title>
+    <style>
+      body {
+        font-family:'Times New Roman';
+        margin: 0;
+        padding-left: 140px;
+        padding-right: 140px;
+        padding-top: 20px;
+        padding-bottom: 60px;
+        /* padding: 140px; */
+        text-align: center;
+      }
+
+      .box-container {
+        border: 2px solid #000;
+        padding: 20px;
+        border-radius: 8px;
+        background-color: #f9f9f9;
+        font-family:'Times New Roman';
+        margin: 20px;
+        box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.8);
+        text-align: justify;
+      }
+
+      /* .sidebar {
+            width: 250px;
+            position: fixed;
+            top: 0;
+            left: 0;
+            height: 100%;
+            background-color: #f4f4f4;
+            padding: 20px;
+            overflow-y: auto;
+        }
+
+        .sidebar ul {
+            list-style-type: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .sidebar li {
+            margin: 10px 0;
+        }
+
+        .sidebar a {
+            text-decoration: none;
+            color: #333;
+            font-size: 16px;
+        }
+
+        .sidebar a:hover {
+            color: #007bff;
+        } */
+      /* 
+        .main-content {
+            margin-left: 270px;
+            padding: 20px;
+        } */
+
+      h1 {
+        font-family:'Times New Roman';
+        text-align: center;
+        font-weight: normal;
+        margin: 0;
+        /* padding: 60px; */
+
+        color: #0047b3;
+      }
+
+      h2 {
+        margin: 0;
+        font-size: 30;
+        text-align: left;
+        padding: 0px;
+        color: #0047b3;
+        font-family:'Times New Roman';
+
+        }
+
+        h3 {
+            margin: 0;
+            padding: 10px 0;
+            text-align: left;
+            color: #0047b3;
+            font-family:'Times New Roman';
+      }
+
+      a {
+        font-weight: bold;
+      }
+
+      p {
+      font-family:'Times New Roman';
+      text-align: left;
+      text-align: justify;
+      font-size: 18px;
+    }
+
+      ul,
+      li {
+        margin: 0;
+        padding: 5px 0;
+        text-align: left;
+        text-align: justify;
+      }
+
+      table {
+        border-collapse: collapse;
+        width: 100%;
+        margin: 20px 0;
+        text-align: left;
+      }
+
+      table,
+      th,
+      td {
+        border: 1px solid black;
+        padding: 8px;
+        text-align: right; 
+        padding-right: 3%;
+        font-size: 18px;
+      }
+
+      .b {
+        list-style-type: disc;
+        list-style-position: outside;
+        padding-left: 1.5em;
+      }
+
+      li.b {
+        margin-bottom: 1em;
+        text-indent: 0.1em;
+      }
+
+      ul.b {
+        list-style-position: inside;
+        margin-bottom: 1em;
+      }
+
+      .zoom-image {
+        transition: transform 0.3s ease;
+        /* Controls the speed of the zoom effect */
+        cursor: zoom-in;
+        /* Changes the cursor icon when hovering */
+      }
+
+      .zoom-image:hover {
+        transform: scale(1.1);
+        /* Increases the image size by 10% when hovered */
+        cursor: zoom-out;
+        /* Optionally changes the cursor again on hover */
+      }
+
+      #topButton {
+        position: fixed;
+        /* Keep the button fixed at the bottom-right corner */
+        bottom: 20px;
+        right: 20px;
+        background-color: hsl(0, 0%, 100%);
+        /* Green background */
+        color: black;
+        /* White text */
+        border: none;
+        /* No border */
+        border-radius: 50%;
+        /* Make it circular */
+        width: 50px;
+        height: 50px;
+        font-size: 16px;
+        font-weight: bold;
+        cursor: pointer;
+        /* Pointer cursor on hover */
+      }
+
+      #topButton img {
+        width: 50px;
+        height: 50px;
+        /* Center the image within the button */
+      }
+
+      #topButton:hover {
+        transform: scale(1.1);
+        /* Slight zoom effect */
+      }
+
+      #backButton {
+        position: fixed;
+        /* Fixed at the top-left corner */
+        top: 20px;
+        left: 20px;
+        width: 50px;
+        height: 50px;
+        background-color: hsl(0, 0%, 100%);
+        color: black;
+        border: none;
+        border-radius: 50%;
+        cursor: pointer;
+        z-index: 1000;
+        /* Ensure it appears above other elements */
+      }
+
+      #backButton img {
+        width: 50px;
+        height: 50px;
+        /* Ensure the image fits perfectly */
+      }
+      .name-column {
+      text-align: left;
+      padding-right: 0%;
+      }
+    </style>
+  </head>
+
+  <body>
+    <script>
+      // Get the button
+      const topButton = document.getElementById("topButton");
+
+      // Show the button when scrolling down
+      window.onscroll = function () {
+        if (
+          document.body.scrollTop > 200 ||
+          document.documentElement.scrollTop > 200
+        ) {
+          topButton.style.display = "block";
+          topButton.style.opacity = "1";
+        } else {
+          topButton.style.opacity = "0";
+          setTimeout(() => (topButton.style.display = "none"), 300); // Hide with delay for smooth transition
+        }
+      };
+
+      // Function to scroll to the top
+      function scrollToTop() {
+        window.scrollTo({
+          top: 10,
+          behavior: "smooth", // Smooth scrolling
+        });
+      }
+    </script>
+
+    <script>
+      // JavaScript function to go back to the previous page
+      function goBack() {
+        window.history.back(); // This will navigate to the previous page in the browser's history
+      }
+    </script>
+
+    <div class="main-content">
+      <div>
+        <button id="topButton" onclick="scrollToTop()">
+          <img class="topButton" src="./BMR_2024_Figures/arrow.png" alt="top" />
+        </button>
+      </div>
+
+      <button id="backButton" style="display: none;">
+        <img class="backButton" src="./BMR_2024_Figures/left.png" alt="back" />
+      </button>
+      <h3 id="top_states_districts_in_terms_of_loan_outstanding">
+        2.3.3&nbsp;&nbsp;&nbsp;Top States and Districts in terms of Loan
+        Outstanding
+      </h3>
+      <p>
+        The top ten States and top twenty-five districts in terms of total loan
+        outstanding at end of the FY 2024 is given in Table 2.5 and Table 2.6,
+        respectively.
+      </p>
+      <h3
+        style="padding-left: 5%; padding-right: 5%; text-align: center"
+        id="table_2.5:_top_ten_states_in_terms_of_loan_outstanding_(₹_in_cr.)"
+      >
+        Table 2.5: Top Ten States in terms of Loan Outstanding (₹ in Cr.)
+      </h3>
+
+      <div style="display: flex; justify-content: center; align-items: center">
+        <table style="margin-left: 22%; margin-right: 22%">
+          <tr
+            style="
+              font-weight: bold;
+              text-align: center;
+              background-color: #d8d9da;
+            "
+          >
+            <td colspan="2" style="text-align: center;padding-right: 0%;">Microfinance Industry – all micro-lenders</td>
+          </tr>
+          <tr
+            style="
+              font-weight: bold;
+              text-align: center;
+              background-color: #d8d9da;
+            "
+          >
+            <td style="margin-right: 5%; text-align: center;">State</td>
+            <td style="text-align: center;padding:0%; padding-left: -2%;">Loan Outstanding (₹ in Cr.)</td>
+          </tr>
+          <tr>
+            <td style="text-align: left;">Bihar</td>
+            <td style="text-align: right;padding-right: 24%;">65,487</td>
+          </tr>
+          <tr>
+            <td style="text-align: left;">Tamil Nadu</td>
+            <td style="text-align: right;padding-right: 24%;">58,239</td>
+          </tr>
+          <tr>
+            <td style="text-align: left;">Uttar Pradesh</td>
+            <td style="text-align: right;padding-right: 24%;">46,304</td>
+          </tr>
+          <tr>
+            <td style="text-align: left;">Karnataka</td>
+            <td style="text-align: right;padding-right: 24%;">42,560</td>
+          </tr>
+          <tr>
+            <td style="text-align: left;">West Bengal</td>
+            <td style="text-align: right;padding-right: 24%;">40,328</td>
+          </tr>
+          <tr>
+            <td style="text-align: left;">Maharashtra</td>
+            <td style="text-align: right;padding-right: 24%;">33,304</td>
+          </tr>
+          <tr>
+            <td style="text-align: left;">Odisha</td>
+            <td style="text-align: right;padding-right: 24%;">25,615</td>
+          </tr>
+          <tr>
+            <td style="text-align: left;">Madhya Pradesh</td>
+            <td style="text-align: right;padding-right: 24%;">24,870</td>
+          </tr>
+          <tr>
+            <td style="text-align: left;">Rajasthan</td>
+            <td style="text-align: right;padding-right: 24%;">18,144</td>
+          </tr>
+          <tr>
+            <td style="text-align: left;">Kerala</td>
+            <td style="text-align: right;padding-right: 24%;">14,159</td>
+          </tr>
+        </table>
+      </div>
+
+      <p>
+        The top ten states accounted for 83% of share in the industry portfolio,
+        while the top five states alone accounted for 57% of the industry
+        portfolio.
+      </p>
+
+      <h3 style="padding-left: 5%; padding-right: 5%; text-align: center">
+        Table 2.6: Top Twenty-Five Districts in terms of Loan Outstanding (₹ in
+        Cr.)
+      </h3>
+      <div style="display: flex; justify-content: center; align-items: center">
+        <table style="margin-left: 18%; margin-right: 18%">
+          <tr
+            style="
+              font-weight: bold;
+              text-align: center;
+              background-color: #d8d9da;
+            "
+          >
+            <td colspan="3" style="text-align: center; padding-right: 0%;">Microfinance Industry – all micro-lenders</td>
+          </tr>
+          <tr
+            style="
+              font-weight: bold;
+              text-align: center;
+              background-color: #d8d9da;
+            "
+          >
+            <td style="text-align: center; padding-right: 0%;">State</td>
+            <td style="text-align: center; padding-right: 0%;">District</td>
+            <td style="text-align: center; padding-right: 0%;">Loan Outstanding (₹ in Cr.)</td>
+          </tr>
+          <tr>
+            <td style="text-align: left;">West Bengal</td>
+            <td style="text-align: left;">Murshidabad</td>
+            <td style="padding-right: 6%;">4,439</td>
+          </tr>
+          <tr>
+            <td style="text-align: left;">Bihar</td>
+            <td style="text-align: left;">East Champaran</td>
+            <td style="padding-right: 6%;">4,269</td>
+          </tr>
+          <tr>
+            <td style="text-align: left;">Bihar</td>
+            <td style="text-align: left;">Muzaffarpur</td>
+            <td style="padding-right: 6%;">4,246</td>
+          </tr>
+          <tr>
+            <td style="text-align: left;">Bihar</td>
+            <td style="text-align: left;">Samastipur</td>
+            <td style="padding-right: 6%;">4,243</td>
+          </tr>
+          <tr>
+            <td style="text-align: left;">Karnataka</td>
+            <td style="text-align: left;">Mysuru</td>
+            <td style="padding-right: 6%;">3,954</td>
+          </tr>
+          <tr>
+            <td style="text-align: left;">Bihar</td>
+            <td style="text-align: left;">Madhubani</td>
+            <td style="padding-right: 6%;">3,614</td>
+          </tr>
+          <tr>
+            <td style="text-align: left;">West Bengal</td>
+            <td style="text-align: left;">North 24 Parganas</td>
+            <td style="padding-right: 6%;">3,607</td>
+          </tr>
+          <tr>
+            <td style="text-align: left;">Tamil Nadu</td>
+            <td style="text-align: left;">Cuddalore</td>
+            <td style="padding-right: 6%;">3,341</td>
+          </tr>
+          <tr>
+            <td style="text-align: left;">Bihar</td>
+            <td style="text-align: left;">Darbhanga</td>
+            <td style="padding-right: 6%;">3,156</td>
+          </tr>
+          <tr>
+            <td style="text-align: left;">Karnataka</td>
+            <td style="text-align: left;">Belgaum</td>
+            <td style="padding-right: 6%;">3,152</td>
+          </tr>
+          <tr>
+            <td style="text-align: left;">Tamil Nadu</td>
+            <td style="text-align: left;">Thanjavur</td>
+            <td style="padding-right: 6%;">3,058</td>
+          </tr>
+          <tr>
+            <td style="text-align: left;">West Bengal</td>
+            <td style="text-align: left;">South 24 Parganas</td>
+            <td style="padding-right: 6%;">2,960</td>
+          </tr>
+          <tr>
+            <td style="text-align: left;">Bihar</td>
+            <td style="text-align: left;">Aurangabad</td>
+            <td style="padding-right: 6%;">2,809</td>
+          </tr>
+          <tr>
+            <td style="text-align: left;">Bihar</td>
+            <td style="text-align: left;">West Champaran</td>
+            <td style="padding-right: 6%;">2,789</td>
+          </tr>
+          <tr>
+            <td style="text-align: left;">Bihar</td>
+            <td style="text-align: left;">Sitamarhi</td>
+            <td style="padding-right: 6%;">2,782</td>
+          </tr>
+          <tr>
+            <td style="text-align: left;">Tamil Nadu</td>
+            <td style="text-align: left;">Salem</td>
+            <td style="padding-right: 6%;">2,747</td>
+          </tr>
+          <tr>
+            <td style="text-align: left;">Tamil Nadu</td>
+            <td style="text-align: left;">Nagapattinam</td>
+            <td style="padding-right: 6%;">2,658</td>
+          </tr>
+          <tr>
+            <td style="text-align: left;">Karnataka</td>
+            <td style="text-align: left;">Tumakuru</td>
+            <td style="padding-right: 6%;">2,652</td>
+          </tr>
+          <tr>
+            <td style="text-align: left;">Bihar</td>
+            <td style="text-align: left;">Begusarai</td>
+            <td style="padding-right: 6%;">2,632</td>
+          </tr>
+          <tr>
+            <td style="text-align: left;">Tamil Nadu</td>
+            <td style="text-align: left;">Madurai</td>
+            <td style="padding-right: 6%;">2,621</td>
+          </tr>
+          <tr>
+            <td style="text-align: left;">Uttar Pradesh</td>
+            <td style="text-align: left;">Gorakhpur</td>
+            <td style="padding-right: 6%;">2,619</td>
+          </tr>
+          <tr>
+            <td style="text-align: left;">Bihar</td>
+            <td style="text-align: left;">Purnia</td>
+            <td style="padding-right: 6%;">2,591</td>
+          </tr>
+          <tr>
+            <td style="text-align: left;">Karnataka</td>
+            <td style="text-align: left;">Bengaluru</td>
+            <td style="padding-right: 6%;">2,564</td>
+          </tr>
+          <tr>
+            <td style="text-align: left;">West Bengal</td>
+            <td style="text-align: left;">Nadia</td>
+            <td style="padding-right: 6%;">2,520</td>
+          </tr>
+          <tr>
+            <td style="text-align: left;">Bihar</td>
+            <td style="text-align: left;">Vaishali</td>
+            <td style="padding-right: 6%;">2,519</td>
+          </tr>
+        </table>
+      </div>
+      <p>
+        The top 25 districts in terms of loan outstanding, included 11 districts
+        from Bihar, 5 districts from Tamil Nadu, 4 districts each from Karnataka
+        and West Bengal, and 1 district from Uttar Pradesh. All the top 25
+        districts had ₹2,000 plus Cr. loan outstanding and of which 11 districts
+        had loan outstanding more than ₹3,000 Cr. and 4 districts with more than
+        ₹4,000 Cr. loan outstanding. The top 25 districts accounted for 18% of
+        share in total industry portfolio and top ten districts accounted for 9%
+        of the total industry portfolio.
+      </p>
+
+      <div class="box-container">
+        <h3
+          id="box_2.1:_end_to_end_digital_transformation_in_microfinance_lending"
+        >
+          Box 2.1: End to end digital transformation in microfinance lending
+        </h3>
+        <p>
+          Muthoot Microfin Ltd (MML), one of the premier microfinance
+          institutions, uses advanced technologies to provide financial services
+          at a scale for its clients across the country. It has developed
+          platforms to orchestrate digital customer journeys for its clients
+          easily and transparently.
+        </p>
+
+        <h3 id="credit_assessment">1. Credit Assessment:</h3>
+
+        <ul style="padding-left: 2%">
+          <li>
+            <ol style="list-style-type: none">
+              <li>
+                First, in the industry, an application-based scorecard was
+                implemented to assess the customer’s creditworthiness by
+                assigning individual credit scores to customers. As a result, it
+                can risk profile each customer individually based on parameters
+                such as payment track record, demographics, age, and location.
+                <b>
+                  Profiling has been done for approximately 2.4 million clients
+                  from September 2022 to March 2024.
+                </b>
+              </li>
+            </ol>
+          </li>
+          <li>
+            <ol style="list-style-type: none">
+              <li>
+                Template-based cash-flow and income assessment of the customer
+                and their household to ensure a realistic assessment of the
+                customer and their household income. The assessment has been
+                done for
+                <b>
+                  than 2.8 million households from April 2022 to March 2024.
+                </b>
+              </li>
+            </ol>
+          </li>
+          <li>
+            <ol style="list-style-type: none">
+              <li>
+                First in the industry, implemented a Socio-Economic Profile
+                score for customer selection.
+                <b>0.6 million clients were profiled using the model.</b>
+              </li>
+            </ol>
+          </li>
+        </ul>
+
+        <h3 id="kyc_check_document_verification">
+          2. KYC Check & Document Verification through a Third Party:
+        </h3>
+
+        <ul style="padding-left: 2%">
+          <li>
+            <ol style="list-style-type: none">
+              <li>
+                Implemented automated KYC checks with the support of third-party
+                vendors eliminating the scope of fraud and any error on account
+                of manual intervention.
+              </li>
+            </ol>
+          </li>
+          <li>
+            <ol style="list-style-type: none">
+              <li>
+                Implemented BOT for verification of application details against
+                the supporting documents.
+              </li>
+            </ol>
+          </li>
+          <li>
+            <ol style="list-style-type: none">
+              <li>
+                First in the industry, implemented paperless sourcing and
+                documentation. All the agreements and documentation are done
+                through E-Signing ensuring authentication of execution,
+                error-free, and without any print or paper, ensuring the best in
+                industry TAT.
+                <b>
+                  Around 2.4 million loans have been processed through E-sign
+                  from April 2023 to March 2024.
+                </b>
+              </li>
+            </ol>
+          </li>
+        </ul>
+
+        <p>
+          <b>
+            Approximately 2 million KYCs have been verified from April 2023 to
+            March 2024.
+          </b>
+        </p>
+
+        <h3 id="loan_processing_collections">
+          3. Loan Processing & Collections:
+        </h3>
+
+        <ul style="padding-left: 2%">
+          <li>
+            <ol style="list-style-type: none">
+              <li>
+                Front runners in indigenously implementing mobility-based
+                solutions for sourcing applications, loan processing, and
+                collections. The same supports both offline and online modes of
+                operations.
+                <b>
+                  Around 5.3 million applications have been processed and 4.1
+                  million loans have been managed from April 2023 to March 2024.
+                </b>
+              </li>
+            </ol>
+          </li>
+          <li>
+            <ol style="list-style-type: none">
+              <li>
+                Mobility-based solution for collection on the field with the
+                flexibility to operate offline to enable collection taking in
+                remote locations without any network. Further, receipts are
+                issued on the field via Bluetooth printers ensuring transparency
+                and accountability to the customers.
+              </li>
+            </ol>
+          </li>
+          <li>
+            <ol style="list-style-type: none">
+              <li>
+                Multiple digital payment options such as QR code, BBPS, Easy
+                Pay, UPI, website option to pay, SMS link for payment, and
+                WhatsApp BOT for payment options for customers.
+              </li>
+            </ol>
+          </li>
+          <li>
+            <ol style="list-style-type: none">
+              <li>
+                First in the segment usage of BOT to automate reconciliation of
+                collection against the vouchers.
+                <br />
+                <b>
+                  Approximately 90% of the collections are managed through BOT.
+                </b>
+              </li>
+            </ol>
+          </li>
+        </ul>
+
+        <h3 id="disbursement">4. Disbursement:</h3>
+
+        <ul style="padding-left: 2%">
+          <li>
+            <ol style="list-style-type: none">
+              <li>
+                Loan requests are enabled through customer application and
+                disbursement without branch visits. Around 35K loans amounting
+                to
+                <b>
+                  ₹1,268 million were disbursed through customer applications
+                  from June 2023 to March 2024.
+                </b>
+              </li>
+            </ol>
+          </li>
+          <li>
+            <ol style="list-style-type: none">
+              <li>
+                H2H mode of disbursement directly into the bank account to the
+                customer minimizing manual intervention post disbursement at the
+                branch.
+                <b>
+                  More than 1.8 million loans were disbursed through H2H mode
+                  from April 2023 to March 2024.
+                </b>
+              </li>
+            </ol>
+          </li>
+        </ul>
+
+        <h3 id="insurance">5. Insurance:</h3>
+
+        <ul style="padding-left: 2%">
+          <li>
+            <ol style="list-style-type: none">
+              <li>
+                First in the industry, launched NATCAT insurance to insure their
+                livelihood/cash-flows for a limited period as they are quite
+                vulnerable to natural calamity, and it has a direct impact on
+                their livelihood and income generation capability.
+                <b>
+                  Around 1.6 million loans have been covered under the scheme
+                  from April 2023 to March 2024.
+                </b>
+                Also, offer Hospi-Cash Insurance to safeguard their
+                hospitalization needs to support them in their tough times.
+              </li>
+            </ol>
+          </li>
+          <li>
+            <ol style="list-style-type: none">
+              <li>
+                Provide e-clinic facility to their customers at 275 branches,
+                where customers can consult their health issues with qualified
+                physicians.
+              </li>
+            </ol>
+          </li>
+        </ul>
+
+        <h3 id="interaction_with_clients">6. Interaction with Clients:</h3>
+
+        <ul style="padding-left: 2%">
+          <li>
+            <ol style="list-style-type: none">
+              <li>
+                One of its kind and the first in the segment to give the
+                customer the option to chat via WhatsApp and get loan details
+                and the option to pay through the link.
+              </li>
+            </ol>
+          </li>
+        </ul>
+        <h3
+          style="
+            text-align: right;
+            font-family:'Times New Roman';
+          "
+        >
+          Courtesy: Muthoot Microfln Ltd. (MML)
+        </h3>
+      </div>
+      <br />
+    </div>
+  </body>
+</html>

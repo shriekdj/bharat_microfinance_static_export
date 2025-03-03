@@ -1,0 +1,409 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <title>Chapter 3A.1</title>
+    <!-- <div class='sidebar'>
+        <ul>
+            <li><a href="#table_3_a.2:_region-wise_distribution_of_nbfc-mfis">Table 3 A.2: Region-wise distribution of
+                    NBFC-MFIs</a></li>
+            <li><a href="#figure_3a.4:_outreach_to_borrowers_across_size_(in_lakhs)_as_on_march_2024">Figure 3A.4:
+                    Outreach to Borrowers across size (in lakhs) as on March 2024</a></li>
+            <li><a href="#figure_3_a.5:_top_10_nbfc-mfis_in_terms_of_active_borrowers_(in_lakhs)">Figure 3 A.5: Top 10
+                    NBFC-MFIs in terms of Active Borrowers (in lakhs)</a></li>
+            <li><a href="#table_3_a.4:_staff_and_borrower_details_across_different_sizes_of_nbfc-mfis">Table 3 A.4:
+                    Staff and Borrower details across different sizes of NBFC-MFIs</a></li>
+            <li><a href="#table_3_a.5:_disbursement_during_fy_2023-24_by_nbfc-mfis">Table 3 A.5: Disbursement during FY
+                    2023-24 by NBFC-MFIs</a></li>
+            <li><a href="#figure_3_a._8:_top_10_nbfc-mfis_in_terms_of_disbursement_(₹_in_cr.)">Figure 3 A. 8: Top 10
+                    NBFC-MFIs in terms of Disbursement (₹ in Cr.)</a></li>
+            <li><a
+                    href="#table_3_a.6:_portfolio_quality_of_nbfc-mfis_under_different_buckets_(based_on_weighted_average_values)">Table
+                    3 A.6: Portfolio Quality of NBFC-MFIs under different buckets (Based on weighted average values)</a>
+            </li>
+        </ul>
+    </div> -->
+    <style>
+      body {
+        font-family:'Times New Roman';
+        margin: 0;
+        padding-left: 140px;
+        padding-right: 140px;
+        padding-top: 20px;
+        padding-bottom: 60px;
+        /* padding: 140px; */
+        text-align: center;
+      }
+
+      .box-container {
+        border: 2px solid #000;
+        padding: 20px;
+        border-radius: 8px;
+        background-color: #f9f9f9;
+        font-family:'Times New Roman';
+        margin: 20px;
+        box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.8);
+        text-align: justify;
+      }
+
+      /* .sidebar {
+            width: 250px;
+            position: fixed;
+            top: 0;
+            left: 0;
+            height: 100%;
+            background-color: #f4f4f4;
+            padding: 20px;
+            overflow-y: auto;
+        }
+
+        .sidebar ul {
+            list-style-type: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .sidebar li {
+            margin: 10px 0;
+        }
+
+        .sidebar a {
+            text-decoration: none;
+            color: #333;
+            font-size: 16px;
+        }
+
+        .sidebar a:hover {
+            color: #007bff;
+        } */
+      /* 
+        .main-content {
+            margin-left: 270px;
+            padding: 20px;
+        } */
+
+      h1 {
+        font-family:'Times New Roman';
+        text-align: center;
+        font-weight: normal;
+        margin: 0;
+        /* padding: 60px; */
+
+        color: #0047b3;
+      }
+
+      h2 {
+        margin: 0;
+        font-size: 30;
+        text-align: left;
+        padding: 0px;
+        color: #0047b3;
+        font-family:'Times New Roman';
+
+        }
+
+        h3 {
+            margin: 0;
+            padding: 10px 0;
+            text-align: left;
+            color: #0047b3;
+            font-family:'Times New Roman';
+      }
+
+      a {
+        font-weight: bold;
+      }
+
+      p {
+      font-family:'Times New Roman';
+      text-align: left;
+      text-align: justify;
+      font-size: 18px;
+    }
+
+      ul,
+      li {
+        margin: 0;
+        padding: 5px 0;
+        text-align: left;
+        text-align: justify;
+      }
+
+      table {
+        border-collapse: collapse;
+        width: 100%;
+        margin: 20px 0;
+        text-align: left;
+      }
+
+      table,
+      th,
+      td {
+        border: 1px solid black;
+        padding: 8px;
+        text-align: right; 
+        padding-right: 3%;
+        font-size: 18px;
+      }
+
+      .b {
+        list-style-type: disc;
+        list-style-position: outside;
+        padding-left: 1.5em;
+      }
+
+      li.b {
+        margin-bottom: 1em;
+        text-indent: 0.1em;
+      }
+
+      ul.b {
+        list-style-position: inside;
+        margin-bottom: 1em;
+      }
+
+      .zoom-image {
+        transition: transform 0.3s ease;
+        /* Controls the speed of the zoom effect */
+        cursor: zoom-in;
+        /* Changes the cursor icon when hovering */
+      }
+
+      .zoom-image:hover {
+        transform: scale(1.1);
+        /* Increases the image size by 10% when hovered */
+        cursor: zoom-out;
+        /* Optionally changes the cursor again on hover */
+      }
+
+      #topButton {
+        position: fixed;
+        /* Keep the button fixed at the bottom-right corner */
+        bottom: 20px;
+        right: 20px;
+        background-color: hsl(0, 0%, 100%);
+        /* Green background */
+        color: black;
+        /* White text */
+        border: none;
+        /* No border */
+        border-radius: 50%;
+        /* Make it circular */
+        width: 50px;
+        height: 50px;
+        font-size: 16px;
+        font-weight: bold;
+        cursor: pointer;
+        /* Pointer cursor on hover */
+      }
+
+      #topButton img {
+        width: 50px;
+        height: 50px;
+        /* Center the image within the button */
+      }
+
+      #topButton:hover {
+        transform: scale(1.1);
+        /* Slight zoom effect */
+      }
+
+      #backButton {
+        position: fixed;
+        /* Fixed at the top-left corner */
+        top: 20px;
+        left: 20px;
+        width: 50px;
+        height: 50px;
+        background-color: hsl(0, 0%, 100%);
+        color: black;
+        border: none;
+        border-radius: 50%;
+        cursor: pointer;
+        z-index: 1000;
+        /* Ensure it appears above other elements */
+      }
+
+      #backButton img {
+        width: 50px;
+        height: 50px;
+        /* Ensure the image fits perfectly */
+      }
+      .name-column {
+      text-align: left;
+      padding-right: 0%;
+      }
+    </style>
+  </head>
+
+  <body>
+    <script>
+      // Get the button
+      const topButton = document.getElementById("topButton");
+
+      // Show the button when scrolling down
+      window.onscroll = function () {
+        if (
+          document.body.scrollTop > 200 ||
+          document.documentElement.scrollTop > 200
+        ) {
+          topButton.style.display = "block";
+          topButton.style.opacity = "1";
+        } else {
+          topButton.style.opacity = "0";
+          setTimeout(() => (topButton.style.display = "none"), 300); // Hide with delay for smooth transition
+        }
+      };
+
+      // Function to scroll to the top
+      function scrollToTop() {
+        window.scrollTo({
+          top: 10,
+          behavior: "smooth", // Smooth scrolling
+        });
+      }
+    </script>
+
+    <script>
+      // JavaScript function to go back to the previous page
+      function goBack() {
+        window.history.back(); // This will navigate to the previous page in the browser's history
+      }
+    </script>
+    <div class="main-content">
+      <div>
+        <button id="topButton" onclick="scrollToTop()">
+          <img class="topButton" src="./BMR_2024_Figures/arrow.png" alt="top" />
+        </button>
+      </div>
+
+      <button id="backButton" style="display: none;">
+        <img class="backButton" src="./BMR_2024_Figures/left.png" alt="back" />
+      </button>
+      <!-- <h1 style="color: black; font-style: italic;">Chapter 3A</h1> -->
+      <h1 style="font-size: 254%" id="performance_of_nbfc-mfis_in_india">
+        Performance of NBFC-MFIs in India
+      </h1><br>
+
+      <div style="text-align: justify; font-family: 'Times New Roman'; line-height: 1.15; font-size: 18px;">
+        <span
+          style="float: left; font-size: 30pt; line-height: 1; font-weight: bold; color: #0047b3; margin-right: 10px; font-family: 'Times New Roman';"
+        >
+          A
+        </span>
+          new class of NBFC called NBFC-MFI was formed based on the
+          recommendation of the Malegam Committee in 2011. The NBFCs are
+          financial companies registered with the Reserve Bank of India under
+          section 45 I A of the Reserve Bank of India Act and regulated by RBI.
+          Those NBFCs having major portfolio (75% or more) under microfinance
+          category, is categorized as NBFC-MFIs. These institutions regulated by
+          RBI are formalized institutions with strong regulatory structure. More
+          than 70% of the portfolio of Micro Lending Institutions (MLIs) are
+          contributed by NBFC-MFIs.
+      </div>
+      
+
+      <p>
+        Since NBFC-MFIs are looked upon with more interest by lenders and
+        investors, the details of NBFC-MFIs are culled out from chapter 3 and
+        presented as a sub chapter.
+      </p>
+      <p>
+        There are around 100 NBFC-MFIs registered with RBI as on March 2024. Out
+        of which some NBFC-MFIs either surrendered licenses or merged with other
+        institutions. Some are not active also. Most of the NBFC- MFIs are still
+        small in size and there are only a few larger ones at present. As per
+        the data, there are only around 25 NBFC-MFIs which are in the middle
+        layer and the rest all in the base layer. In this chapter, information
+        of 87 NBFC-MFIs is presented, which represents more than 98% of the
+        business in this category. 
+      </p>
+      <h2 style="font-size: x-large">3A.1 NBFC-MFIs across size</h2>
+      <br />
+      <h3 style="padding-left: 5%; padding-right: 5%; text-align: center">
+        Table 3 A.1: Size-wise distribution of NBFC-MFIs and their portfolio
+      </h3>
+      <table>
+        <!-- First Row (Header) - Center aligned -->
+        <tr style="font-weight: bold; text-align: center; background-color: #d8d9da;">
+          <td style="text-align: center; padding-right: 1%;">Size</td>
+          <td style="text-align: center; padding-right: 1%;">No. of NBFC-MFIs</td>
+          <td style="text-align: center; padding-right: 1%;">On-Balance Sheet Portfolio (₹ in Cr.)</td>
+          <td style="text-align: center; padding-right: 1%;">Off-Balance Sheet Portfolio (₹ in Cr.)</td>
+          <td style="text-align: center; padding-right: 1%;">Gross Loan Portfolio (₹ in Cr.)</td>
+        </tr>
+      
+        <!-- Sub-header row -->
+        <tr style="font-weight: bold; background-color: rgb(218, 216, 216); text-align: center;">
+          <td style="text-align: center; padding-right: 1%;"></td>
+          <td style="text-align: center; padding-right: 1%;">1</td>
+          <td style="text-align: center; padding-right: 1%;">2</td>
+          <td style="text-align: center; padding-right: 1%;">3</td>
+          <td style="text-align: center; padding-right: 1%;">4 (2+3)</td>
+        </tr>
+      
+        <!-- Subsequent rows:
+             - First column (Size) -> left aligned
+             - Other columns (numeric) -> right aligned
+        -->
+        <tr>
+          <td style="text-align: left;">Small (&lt;₹100 Cr.)</td>
+          <td style="text-align: right;">30</td>
+          <td style="text-align: right;">1,048</td>
+          <td style="text-align: right;">229</td>
+          <td style="text-align: right;">1,276</td>
+        </tr>
+        <tr>
+          <td style="text-align: left;">Medium (₹100 Cr.-₹500 Cr.)</td>
+          <td style="text-align: right;">21</td>
+          <td style="text-align: right;">2,596</td>
+          <td style="text-align: right;">2,409</td>
+          <td style="text-align: right;">5,005</td>
+        </tr>
+        <tr>
+          <td style="text-align: left;">Large (₹500 Cr.-₹2,000 Cr.)</td>
+          <td style="text-align: right;">16</td>
+          <td style="text-align: right;">9,019</td>
+          <td style="text-align: right;">5,415</td>
+          <td style="text-align: right;">14,435</td>
+        </tr>
+        <tr>
+          <td style="text-align: left;">Very Large (&gt;₹2,000 Cr.)</td>
+          <td style="text-align: right;">20</td>
+          <td style="text-align: right;">1,39,107</td>
+          <td style="text-align: right;">27,271</td>
+          <td style="text-align: right;">1,66,378</td>
+        </tr>
+      
+        <!-- Total Row (bold) -->
+        <tr style="font-weight: bold; background-color: rgb(218, 216, 216);">
+          <td style="text-align: left;">Total</td>
+          <td style="text-align: right;">87</td>
+          <td style="text-align: right;">1,51,770</td>
+          <td style="text-align: right;">35,324</td>
+          <td style="text-align: right;">1,87,094</td>
+        </tr>
+      </table>
+      
+      
+      <p>
+        The on-balance sheet portfolio, off-balance portfolio and gross loan
+        portfolio of 87 NBFC-MFIs are at &gt;₹1,51,770 Cr., ₹35,324 Cr. and
+        ₹1,87,094 Cr. respectively, spread across 33 states and union
+        territories. The on-balance portfolio forms 81% and off-balance sheet
+        portfolio forms 19% of the total loan portfolio of NBFC-MFIs, as given
+        in Table 3A.1.
+      </p>
+      <p>
+        Out of 87 NBFC-MFIs, 36 have portfolio above ₹500 Cr., and their
+        combined portfolio works out to₹1,80,812 Cr portfolio, constituting 97%
+        of total portfolio (AUM) of NBFC-MFIs. Whereas the remaining 51
+        NBFC-MFIs constitute ₹6,281 Cr., with only 3% share. Similarly, 20 very
+        large NBFC-MFIs over ₹2,000 Cr. constitute ₹1,66,378 Cr, holding 89% of
+        total portfolio (AUM) of NBFC-MFIs. Out of 20 very large NBFC-MFIs, 9
+        have AUM above ₹10,000 Cr. which constitutes ₹1,18, 626 Cr, which forms
+        63% of total portfolio (AUM) of NBFC-MFIs.
+      </p>
+      </div>
+  </body>
+</html>
